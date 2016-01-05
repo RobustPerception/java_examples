@@ -34,11 +34,9 @@ public class JavaSimple {
       context.setContextPath("/");
       server.setHandler(context);
       // Expose our example servlet.
-      context.addServlet(new ServletHolder(
-          new ExampleServlet()), "/");
+      context.addServlet(new ServletHolder(new ExampleServlet()), "/");
       // Expose Promtheus metrics.
-      context.addServlet(new ServletHolder(
-          new MetricsServlet()), "/metrics");
+      context.addServlet(new ServletHolder(new MetricsServlet()), "/metrics");
       // Add metrics about CPU, JVM memory etc.
       DefaultExports.initialize();
 
